@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Assignment1_2 {
+
+	public static void main(String[] args) 
+	{
+		Scanner Sc=new Scanner(System.in);
+		  
+		  System.out.println("Enter first number ");
+	     if(Sc.hasNextDouble()!=Sc.hasNextInt())
+	     { 	 
+	    	 double num1=Sc.nextDouble();    	 
+	     System.out.println("Enter second number"); 	  
+	    	 if(Sc.hasNextDouble()!=Sc.hasNextInt())
+	    	 {
+	    		 double num2=Sc.nextDouble();		 
+	    		 double avg=(num1+num2)/2;
+	    		 System.out.println("avg="+avg);
+	    	 } 	 
+	    	 else
+	    	 {
+	    		 System.out.println("Not a double number");
+	    	 }  	
+	     }
+	     else
+	     {	 
+	     System.out.println("Invalid input");
+	     }
+	      
+	     Sc.close();
+	}
+
+}

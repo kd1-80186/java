@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Assignment1_2 {
+
+	public static void main(String[] args) 
+	{
+		double num1;
+		double num2;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter value of num1 and num2");
+		//num1 = sc.nextDouble();
+		//System.out.println("Enter value of num2");
+		//num2 = sc.nextDouble();
+		if(sc.hasNextDouble()&&sc.hasNextDouble())
+		{
+			System.out.println("Entered numbers are double ");
+			System.out.println("Average of num1 and num2 : "+(num1+num2)/2);
+		}
+		else 
+		System.out.println("Entered numbers are not double ");
+		
+		
+
+	}
+
+}

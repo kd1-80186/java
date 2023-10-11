@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Assignment1_3 {
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		System.out.println("  Item           price(RS)");
+		System.out.println("1. Dosa           Rs.50");
+		System.out.println("2. Idli           Rs.50");
+		System.out.println("3. Vadapav        Rs.10");
+		System.out.println("4. Samosa         Rs.18");
+		System.out.println("5. Kachori        Rs.20");
+		System.out.println("6. Patis          Rs.15");
+		System.out.println("7. Meduvada       Rs.30");
+		System.out.println("8. Upma           Rs.15");
+		System.out.println("9. Misal          Rs.25");
+	}
+
+}

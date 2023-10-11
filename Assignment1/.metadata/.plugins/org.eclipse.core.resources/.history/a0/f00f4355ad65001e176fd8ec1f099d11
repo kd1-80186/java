@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Assignment1_3 {
+
+	public static void main(String[] args) 
+	{
+		int choice;
+		int price1 = 0;
+		int price2 = 0;
+		int dosa_count=0;
+		int idli_count=0;
+		Scanner sc = new Scanner(System.in);
+		do 
+		{
+		System.out.println("  Item           price(RS)");
+		System.out.println("Exit");
+		System.out.println("1. Dosa           Rs.50");
+		System.out.println("2. Idli           Rs.30");
+		System.out.println("3. Vadapav        Rs.10");
+		System.out.println("4. Samosa         Rs.18");
+		System.out.println("5. Kachori        Rs.20");
+		System.out.println("6. Patis          Rs.15");
+		System.out.println("7. Meduvada       Rs.30");
+		System.out.println("8. Upma           Rs.15");
+		System.out.println("9. Misal          Rs.25");
+		System.out.println("10.Generate bill");
+		System.out.println("Enter your choice : ");
+		choice = sc.nextInt();
+		
+		switch (choice) 
+		{
+		case 0: System.out.println("Thank you for ordering food");
+			break;
+			
+		case 1:
+				System.out.print("Enter quantity : ");
+				dosa_count = sc.nextInt();
+     			price1 = 50*dosa_count;	
+				System.out.println("Thank you for ordering food");
+				break;
+				
+		
+		case 10: System.out.print("Total bill : ");
+				 
+				System.out.println("Thank you for ordering food");
+			
+		}
+		}while(choice!=0);
+	}
+
+}
