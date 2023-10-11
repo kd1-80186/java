@@ -1,0 +1,11 @@
+package com.app.geomerty;
+
+public class Point2dtest {
+
+	public static void main(String[] args) 
+	{
+		Point2D p1 = new Point2D(2,4);
+		p1.instring();
+	}
+
+}

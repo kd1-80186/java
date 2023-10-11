@@ -1,0 +1,23 @@
+package com.app.geomerty;
+
+public class Point2dtest {
+
+	public static void main(String[] args) 
+	{
+		Point2D p1 = new Point2D();
+		System.out.println("First point");
+		p1.acceptData();
+		
+		Point2D p2 = new Point2D();
+		System.out.println("Second point");
+		p2.acceptData();
+		
+		System.out.println("Two points are equal? "+p1.isEqual(p2));
+		
+		
+		
+		
+		//System.out.println("ISequal = "+p1.isEqual());
+		
+	}
+}

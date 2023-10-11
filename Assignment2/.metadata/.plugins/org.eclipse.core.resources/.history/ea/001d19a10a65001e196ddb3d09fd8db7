@@ -1,0 +1,20 @@
+package com.sunbeaminfo.employeetest;
+
+import com.sunbeaminfo.employee.Employee;
+
+public class Employeetest {
+
+	public static void main(String[] args) 
+	{
+		Employee e1 = new Employee();
+		e1.acceptData();
+		if(e1.getSalary()<=0)
+		{
+			e1.setSalary(0);
+		}
+		
+			
+
+	}
+
+}

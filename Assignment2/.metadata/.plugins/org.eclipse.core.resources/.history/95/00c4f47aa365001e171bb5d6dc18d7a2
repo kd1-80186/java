@@ -1,0 +1,13 @@
+package com.app.geomerty;
+
+public class Point2dtest {
+
+	public static void main(String[] args) 
+	{
+		Point2D p1 = new Point2D();
+		System.out.println("First point");
+		p1.acceptData();
+		//System.out.println("ISequal = "+p1.isEqual());
+		
+	}
+}

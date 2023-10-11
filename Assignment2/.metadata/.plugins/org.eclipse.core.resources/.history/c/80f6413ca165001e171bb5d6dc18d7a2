@@ -1,0 +1,10 @@
+package com.app.geomerty;
+
+public class Point2dtest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

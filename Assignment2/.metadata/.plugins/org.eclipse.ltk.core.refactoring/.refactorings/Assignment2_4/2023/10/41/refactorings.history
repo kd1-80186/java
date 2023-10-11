@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.app.geomerty.Point2dtest.java&apos; to &apos;Point2Dtest.java&apos;&#x0A;- Original project: &apos;Assignment2_4&apos;&#x0A;- Original element: &apos;com.app.geomerty.Point2dtest.java&apos;&#x0A;- Renamed element: &apos;com.app.geomerty.Point2Dtest.java&apos;" description="Rename compilation unit &apos;Point2dtest.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.app.geomerty{Point2dtest.java" name="Point2Dtest.java" references="false" stamp="1696749031118" version="1.0"/>
+</session>
