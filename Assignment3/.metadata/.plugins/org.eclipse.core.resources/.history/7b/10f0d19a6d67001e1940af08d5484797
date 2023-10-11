@@ -1,0 +1,108 @@
+
+public class Dailydrivingcost 
+{
+	private double miles;
+	private double gasolineCost;
+	private double avgMiles;
+	private double parkingFees;
+	private double tollCost;
+	
+	public Dailydrivingcost() {
+		super();
+		this.miles = 0;
+		this.gasolineCost = 0;
+		this.avgMiles = 0;
+		this.parkingFees = 0;
+		this.tollCost = 0;
+	}
+
+	
+	public Dailydrivingcost(double miles, double gasolineCost, double avgMiles, double parkingFees, double tollCost) {
+		super();
+		this.miles = miles;
+		this.gasolineCost = gasolineCost;
+		this.avgMiles = avgMiles;
+		this.parkingFees = parkingFees;
+		this.tollCost = tollCost;
+	}
+
+
+
+	public double getMiles() {
+		return miles;
+	}
+
+
+
+	public void setMiles(double miles) {
+		this.miles = miles;
+	}
+
+
+
+	public double getGasolineCost() {
+		return gasolineCost;
+	}
+
+
+
+	public void setGasolineCost(double gasolineCost) {
+		this.gasolineCost = gasolineCost;
+	}
+
+
+
+	public double getAvgMiles() {
+		return avgMiles;
+	}
+
+
+
+	public void setAvgMiles(double avgMiles) {
+		this.avgMiles = avgMiles;
+	}
+
+
+
+	public double getParkingFees() {
+		return parkingFees;
+	}
+
+
+
+	public void setParkingFees(double parkingFees) {
+		this.parkingFees = parkingFees;
+	}
+
+
+
+	public double getTollCost() {
+		return tollCost;
+	}
+
+
+
+	public void setTollCost(double tollCost) {
+		this.tollCost = tollCost;
+	}
+
+		
+	void acceptData()
+	{
+		System.out.println("Enter miles driven per day");
+		System.out.println("Enter cost per gallon of gasoline.");
+		System.out.println("Enter average miles per gallon.");
+		System.out.println("Enter parking fees per day");
+		System.out.println("Enter parking fees per day");
+		System.out.println("Enter tolls per day");
+		
+		
+	}
+
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

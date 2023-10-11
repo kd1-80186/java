@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/home/sunbeam/Desktop/cdac_course/Student_data/JAVA_course/Assignments/Assignment3/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+1829498262.index
+437050624.index

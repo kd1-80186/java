@@ -1,0 +1,880 @@
+!SESSION 2023-10-09 14:43:45.855 -----------------------------------------------
+eclipse.buildId=3.9.18.202109140905-RELEASE-e421
+java.version=11.0.20.1
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2023-10-09 14:44:24.362
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-10-09 14:44:24.362
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@654dbb78,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1dba7721,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2023-10-09 14:44:25.131
+!MESSAGE org.eclipse.jdt.junit.ResultView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2023-10-09 14:44:25.132
+!MESSAGE org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2023-10-09 14:44:25.132
+!MESSAGE org.eclipse.contribution.xref.ui.views.XReferenceView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2023-10-09 14:44:36.798
+!MESSAGE Error creating server instance with command:
+ "/home/sunbeam/Desktop/cdac_course/Student_data/JAVA_course/spring-tool-suite-3.9.18.RELEASE-e4.21.0-linux-gtk-x86_64/sts-bundle/pivotal-tc-server/developer-4.1.0.RELEASE/tcserver create base-instance -t base --force -v 9.0.33.A.RELEASE". Check access permission for the directory /home/sunbeam/Desktop/cdac_course/Student_data/JAVA_course/spring-tool-suite-3.9.18.RELEASE-e4.21.0-linux-gtk-x86_64/sts-bundle/pivotal-tc-server/developer-4.1.0.RELEASE and its files and subdirectories.
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2023-10-09 14:44:36.798
+!MESSAGE The instance creation command failed and returned code 1
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2023-10-09 14:44:36.798
+!MESSAGE Output of the instance creation command:
+'create' command failed. An unexpected error occurred while attempting to validate tc Runtime Version 9.0.33.A.RELEASE: repo.pivotal.io
+
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-10-09 18:27:56.020
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+import java.util.Scanner;
+
+/*Q1. (Credit Limit Calculator)
+Develop a Java application that determines whether any of several department-store customers has
+exceeded the credit limit on a charge account.
+For each customer,the following facts are available:
+a) account number
+b) balance at the beginning of the month
+c) total of all items charged by the customer this month
+d) total of all credits applied to the customer’s account this month
+e) allowed credit limit.
+The program should input all these facts as integers, calculate the new balance (= beginning
+balance+ charges – credits), display the new balance and determine whether the new balance
+exceeds the customer’s credit limit. For those customers whose credit limit is exceeded, the
+program should display the message "Credit limit exceeded".*/
+
+public class Creditlimitcalculator {
+
+	private int accNo;
+	private int balance;
+	private int chargeMonth;
+	private int creditMonth;
+	private int creditLimit;
+	
+	public Creditlimitcalculator()
+	{
+		
+		this.accNo = 9021;
+		this.balance = 0;
+		this.chargeMonth = 0;
+		this.creditMonth = 0;
+		this.creditLimit = 0;
+	}
+		
+	public Creditlimitcalculator(int accNo, int balance, int chargeMonth, int creditMonth, int creditLimit) {
+		
+		this.accNo = accNo;
+		this.balance = balance;
+		this.chargeMonth = chargeMonth;
+		this.creditMonth = creditMonth;
+		this.creditLimit = creditLimit;
+	}
+
+	public int getAccNo() {
+		return accNo;
+	}
+
+	public void setAccNo(int accNo) {
+		this.accNo = accNo;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	public int getChargeMonth() {
+		return chargeMonth;
+	}
+
+	public void setChargeMonth(int chargeMonth) {
+		this.chargeMonth = chargeMonth;
+	}
+
+	public int getCreditMonth() {
+		return creditMonth;
+	}
+
+	public void setCreditMonth(int creditMonth) {
+		this.creditMonth = creditMonth;
+	}
+
+	public int getCreditLimit() {
+		return creditLimit;
+	}
+
+	public void setCreditLimit(int creditLimit) {
+		this.creditLimit = creditLimit;
+	}
+	
+	void accpetData()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter account number : ");
+		this.accNo = sc.nextInt();
+		System.out.print("Enter balance : ");
+		this.balance = sc.nextInt();
+		System.out.print("Enter total items charged : ");
+		this.chargeMonth = sc.nextInt();
+		System.out.print("Enter total credits applied this month : ");
+		this.creditMonth = sc.nextInt();
+		System.out.print("Enter credit limit : ");
+		this.creditMonth = sc.nextInt();	
+	}
+
+	void displayData()
+	{
+		System.out.println("Account number : "+this.accNo);
+		System.out.println("Balance : "+this.balance);
+		System.out.println("Total items charged : "+this.chargeMonth);
+		System.out.println("Total credits applied this month : "+this.creditMonth);
+		System.out.println("Credit limit : "+this.creditLimit);
+	}
+	
+	void new_balance()
+		
+	public static void main(String[] args)
+	{
+		
+	
+	}
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:3190)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3349)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1526)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:501)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2023-10-09 18:27:56.022
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:3190)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3349)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1526)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:501)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2023-10-09 18:27:56.023
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:3190)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3349)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1526)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:501)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+!SESSION 2023-10-10 15:18:25.010 -----------------------------------------------
+eclipse.buildId=3.9.18.202109140905-RELEASE-e421
+java.version=11.0.20.1
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2023-10-10 15:18:35.650
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-10-10 15:18:35.650
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e4bf55b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@60510791,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-10-10 15:25:22.191
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:943)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 985 2023-10-10 15:25:22.192
+!MESSAGE Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/util/Scanner.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-10-10 16:04:00.202
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:943)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 985 2023-10-10 16:04:00.204
+!MESSAGE Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-10-10 16:10:56.559
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:943)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 985 2023-10-10 16:10:56.560
+!MESSAGE Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 504 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-10-10 16:31:55.120
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:943)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:749)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:749)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 985 2023-10-10 16:31:55.121
+!MESSAGE Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:749)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/io/PrintStream.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-10-10 17:29:54.448
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:943)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:749)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:749)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 985 2023-10-10 17:29:54.449
+!MESSAGE Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryMethod.getAttachedJavadoc(BinaryMethod.java:749)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Math.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2023-10-10 17:44:27.299
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:943)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 985 2023-10-10 17:44:27.300
+!MESSAGE Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+!STACK 0
+java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1974)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:1969)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:1968)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:250)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:888)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1090)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:1047)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:519)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: java.io.IOException: Server returned HTTP response code: 502 for URL: https://docs.oracle.com/en/java/javase/11/docs/api/jdk/internal/org/jline/utils/Display.html
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:334)
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:874)
+	... 10 more
