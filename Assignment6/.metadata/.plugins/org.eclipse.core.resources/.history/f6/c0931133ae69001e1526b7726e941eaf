@@ -1,0 +1,21 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+public class StringLength 
+{
+	
+	private String s;
+	
+	public void Length()
+	{
+		System.out.println("Enter string");
+		Scanner sc = new Scanner(System.in);
+		s = sc.next();
+		StringBuffer sb = new StringBuffer();
+		int string_length = sb.length();
+		
+	}
+ 
+}
+

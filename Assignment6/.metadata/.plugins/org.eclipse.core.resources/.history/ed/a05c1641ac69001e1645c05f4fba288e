@@ -1,0 +1,13 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+public class StringLength 
+{
+	
+	private String s;
+	
+	Scanner sc  = new Scanner(System.in);
+   
+
+}

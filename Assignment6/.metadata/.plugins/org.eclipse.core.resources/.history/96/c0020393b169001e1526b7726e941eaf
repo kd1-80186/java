@@ -1,0 +1,26 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+public class StringLength 
+{
+	
+	private String s;
+	
+	public void Length() throws ExceptionLineTooLong
+	{
+		System.out.print("Enter string : ");
+		Scanner sc = new Scanner(System.in);
+		s = sc.next();
+		  	if(s.length() > 80)
+		  		throw new ExceptionLineTooLong();
+		  	
+	}
+
+	@Override
+	public String toString() {
+		return "StringLength [s=" + s + "]";
+	}
+ 
+}
+

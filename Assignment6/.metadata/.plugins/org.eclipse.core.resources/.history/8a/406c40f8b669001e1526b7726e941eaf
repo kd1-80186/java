@@ -1,0 +1,21 @@
+package com.sunbeam;
+
+public class Circle 
+{
+	private double diameter;
+	private Point2D point;
+	
+	public Circle() {
+		super();
+		this.diameter = 100;
+		this.point = new Point2D(0,0);
+	}
+
+	@Override
+	public String toString() {
+		return "Circle [diameter=" + diameter + ", point=" + "(" +point.getX_point()+"," + point.getY_point()+ ")" + "]";
+	}
+	
+
+	
+}

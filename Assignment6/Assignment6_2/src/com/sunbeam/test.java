@@ -1,0 +1,22 @@
+0package com.sunbeam;
+
+public class test {
+
+	public static void main(String[] args) {
+	
+		Circle c = new Circle();
+		System.out.println(c);
+		try 
+		{
+		c.acceptData();	
+		}
+		catch(NonNegativeDiameterException e)
+		{
+			e.printStackTrace();
+			System.out.println(e);
+		}
+		
+		System.out.println(c);
+	}
+
+}
