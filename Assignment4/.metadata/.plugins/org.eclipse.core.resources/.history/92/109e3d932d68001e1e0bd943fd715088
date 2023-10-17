@@ -1,0 +1,23 @@
+package com.app.fruits;
+
+public class Apple extends Fruit
+{
+	
+	public Apple()
+	{
+		super("Apple","Red",1.5,true);
+	}
+
+	public String taste()
+	{
+		return "Sweet and sour";
+	}
+	
+	void acceptData()
+	{
+		super.acceptData();
+	}
+	
+	
+
+}

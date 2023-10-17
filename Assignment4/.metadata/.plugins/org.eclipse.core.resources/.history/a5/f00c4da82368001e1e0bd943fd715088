@@ -1,0 +1,19 @@
+package com.app.fruits;
+
+public class Orange extends Fruit 
+{
+	public Orange()
+	{
+		super("Orange","Orange",1.7,true);
+	}
+
+	@Override
+	public String toString() {
+		return "Orange [getColor()=" + getColor() + ", getWeight()=" + getWeight() + ", getName()=" + getName()
+				+ ", isFresh()=" + isFresh() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+	
+	
+
+}

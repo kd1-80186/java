@@ -1,0 +1,17 @@
+package com.app.fruits;
+
+public class Mango extends Fruit 
+{
+
+	ublic Mango()
+	{
+		super("Mango","Yellow",1.9,true);
+	}
+
+	@Override
+	public String toString() {
+		return "Mango [getColor()=" + getColor() + ", getWeight()=" + getWeight() + ", getName()=" + getName()
+				+ ", isFresh()=" + isFresh() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+}

@@ -1,0 +1,10 @@
+package com.app.fruits;
+
+public class Mango extends Fruit 
+{
+
+	Mango()
+	{
+		super("Mango","Yellow",1.9,true);
+	}
+}

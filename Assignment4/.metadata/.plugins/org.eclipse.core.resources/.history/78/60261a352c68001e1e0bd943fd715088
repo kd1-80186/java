@@ -1,0 +1,15 @@
+package com.app.fruits;
+
+public class Apple extends Fruit
+{
+	
+	public Apple()
+	{
+		super("Apple","Red",1.5,true);
+	}
+
+	
+	
+	
+
+}

@@ -1,0 +1,17 @@
+package com.app.fruits;
+
+public class Orange extends Fruit 
+{
+	public Orange()
+	{
+		super("Orange","Orange",1.7,true);
+	}
+
+	public String taste()
+	{
+		return "sour";
+	}
+	
+	
+
+}
