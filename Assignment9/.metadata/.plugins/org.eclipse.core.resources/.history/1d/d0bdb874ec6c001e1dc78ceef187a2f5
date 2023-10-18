@@ -1,0 +1,37 @@
+package com.sunbeam;
+
+import java.util.Comparator;
+
+public class TestStudent {
+
+	public static void main(String[] args) 
+	{
+		Student[] s = new Student[6];
+		 s[0] = new Student(10,"s1","Karad",66.12);
+		 s[1] = new Student(20,"s1","satara",78.54);
+		 s[2] = new Student(30,"s2","pune",96.56);
+		 s[3] = new Student(40,"s3","mumbai",85.76);
+		 s[4] = new Student(50,"s3","pune",96.56);
+		 s[5] = new Student(60,"s4","satara",66.12);
+		
+		 class CompareStudent implements Comparator<Student>
+		{
+
+			@Override
+			public int compare(Student s1, Student s2)
+			{
+				int diff = - s1.getCity().compareTo(s2.getCity());
+				if(diff == 1)
+					diff = -(Double.compare(s1.getMarks(), s2.getMarks()));
+				if(diff == 1)
+					diff = s1.getName().compareTo(s2.getName());
+				return diff;
+			}			
+		}
+		
+		 for(Employee e : )
+		
+
+	}
+
+}

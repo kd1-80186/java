@@ -1,0 +1,18 @@
+package com.sunbeam;
+
+public class TestStudent {
+
+	public static void main(String[] args) 
+	{
+		Student s1 = new Student(10,"s1","Karad",66);
+		Student s2 = new Student(20,"s1","Karad",66);
+		Student s3 = new Student(30,"s1","Karad",66);
+		Student s4 = new Student(40,"s1","Karad",66);
+		Student s5 = new Student(50,"s1","Karad",66);
+		Student s6 = new Student(60,"s1","Karad",66);
+		
+		
+
+	}
+
+}
