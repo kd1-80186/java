@@ -1,0 +1,22 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+public class Date implements Displayable
+{
+	private  String name;
+	private int age;
+	
+	void accept()
+	{
+		System.out.println("Enter name and age : ");
+		Scanner sc = new Scanner(System.in);
+		this.name = sc.next();
+		this.age = sc.nextInt();
+	}
+	
+	void show()
+	{
+		
+	}
+}

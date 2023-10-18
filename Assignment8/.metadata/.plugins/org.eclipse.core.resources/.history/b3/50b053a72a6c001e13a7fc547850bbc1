@@ -1,0 +1,40 @@
+package com.sunbeam;
+
+class TestSal<T extends Employee>
+{ 
+	private T data;
+	
+	public void set(T obj)
+	{
+		this.data = obj; 
+	}
+	
+	public T get()
+	{
+		return this.data;
+	}
+	public double getCalculateSalary()
+	{
+		return getCalculateSalary();
+		
+	}
+}
+	
+	
+
+public static class test{
+	
+	public static void print(TestSal<? extends Employee>T )
+	{
+		System.out.println("Commision salary details : "+T.get());
+	}
+
+	public static void main(String[] args) 
+	{
+		TestSal<CommissionEmployee> t1 = new TestSal<>();
+		t1.set(new CommissionEmployee("Anjali","Bhise",10,100,1000));
+		print(t1);		
+
+	}
+}
+

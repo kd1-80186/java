@@ -1,0 +1,46 @@
+package com.sunbeam;
+
+	class Box<T>
+	{
+		private T data;
+		
+		public void set(T obj)
+		{
+			this.data = obj; 
+		}
+		
+		public T get()
+		{
+			return this.data;
+		}
+	}
+
+public class test 
+{
+	public static void printDisplayableBox(Box<? extends Displayable> d)
+	{
+		System.out.println(" Details ");
+	    d.get().show();
+	}
+	
+	public static void printBox(Box<? extends Displayable> d)
+	{
+		System.out.println(" Details ");
+	    d.get().show();
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		Box<Person> b1 = new Box();
+		b1.set(new Person("Ajay",35));
+		printDisplayableBox(b1);
+		
+		Box<Date> b2 = new Box();
+		b2.set(new Date(5,2,1999));
+		printDisplayableBox(b2);
+		
+		
+	}
+
+}
