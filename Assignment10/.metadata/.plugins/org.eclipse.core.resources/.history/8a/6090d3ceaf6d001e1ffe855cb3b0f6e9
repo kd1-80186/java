@@ -1,0 +1,21 @@
+package com.sunbeam;
+
+import java.util.*;
+
+public class ArrayString {
+
+	public static void main(String[] args) 
+	{
+		List<String> list = new ArrayList();
+		list.add("Anjali");
+		list.add("Sulochana");
+		list.add("Ajay");
+		list.add("Vishnu");
+		list.add("Shamal");
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,47 @@
+package com.sunbeam;
+
+import java.util.*;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) 
+	{
+		List<Employee> list = new LinkedList();
+		int choice;
+		Scanner sc= new Scanner(System.in);
+		do
+		{
+		System.out.println("Enter your choice : ");
+		System.out.println("0. Exit");
+		System.out.println("1. Add Employee");
+		System.out.println("2. Delete Employee");
+		System.out.println("3. Find Employee");
+		System.out.println("4. Sort Employee");
+		System.out.println("5. EDit Employee");
+		choice = sc.nextInt();
+		
+		switch(choice)
+		{
+		case 0: System.out.println("Thank you");
+				break;
+				
+		case 1: 
+				Employee e =new Employee();
+				e.acceptData();
+				list.add(e);	
+				System.out.println("Employee added succesfully");
+				break;
+				
+		case 2: System.out.println("Enter index to remove the employee : ");
+				int index = sc.nextInt();
+				list.remove(index);
+			break;
+		
+		}
+		
+
+	}while(choice!=0);
+	
+	
+	}
+}

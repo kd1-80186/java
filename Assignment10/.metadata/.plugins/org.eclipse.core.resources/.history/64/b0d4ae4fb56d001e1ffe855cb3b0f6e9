@@ -1,0 +1,61 @@
+package com.sunbeam;
+
+import java.util.*;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) 
+	{
+		int choice;
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter your choice : ");
+		System.out.println("0. Exit");
+		System.out.println("1. Add Employee");
+		System.out.println("2. Delete Employee");
+		System.out.println("3. Finf Employee");
+		System.out.println("4. Sort Employee");
+		System.out.println("5. EDit Employee");
+		choice = sc.nextInt();
+		
+		
+		
+		List<Employee> list = new LinkedList();
+		int a=5;
+		while(a<5)
+		{
+			Employee e =new Employee();
+			e.acceptData();
+			list.add(e);
+		}
+		
+		
+//		Employee e1 = new Employee();
+//		e1.acceptData();
+//		if(e1.getSalary()<=0)
+//		{
+//			e1.setSalary(0);
+//		}
+//		
+//		double yearly_salary=e1.getSalary()*12;
+//		System.out.println("Yearly salary of first person : "+yearly_salary);
+//		
+//		double hike_salary = yearly_salary + yearly_salary*0.1;
+//		System.out.println("Yearly salary of first person after 10% hike : "+hike_salary);
+//		
+//		Employee e2 = new Employee();
+//		e2.acceptData();
+//		if(e2.getSalary()<=0)
+//		{
+//			e2.setSalary(0);
+//		}
+//		
+//		double yearly_salary1=e2.getSalary()*12;
+//		System.out.println("Yearly salary of second person : "+yearly_salary1);
+//		
+//		double hike_salary1 = yearly_salary1 + yearly_salary1*0.1;
+//		System.out.println("Yearly salary of second person after 10% hike : "+hike_salary1);
+//		
+
+	}
+
+}

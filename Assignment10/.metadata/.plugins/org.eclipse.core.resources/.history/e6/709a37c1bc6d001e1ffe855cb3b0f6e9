@@ -1,0 +1,103 @@
+package com.sunbeam;
+
+import java.util.*;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) 
+	{
+		List<Employee> list = new LinkedList();
+		int choice;
+		Scanner sc= new Scanner(System.in);
+		do
+		{
+		System.out.println("Enter your choice : ");
+		System.out.println("0. Exit");
+		System.out.println("1. Add Employee");
+		System.out.println("2. Delete Employee");
+		System.out.println("3. Find Employee");
+		System.out.println("4. Sort Employee");
+		System.out.println("5. EDit Employee");
+		choice = sc.nextInt();
+		
+		switch(choice)
+		{
+		case 0: System.out.println("Thank you");
+				break;
+				
+		case 1: 
+				Employee e =new Employee();
+				e.acceptData();
+				list.add(e);	
+				System.out.println("Employee added succesfully");
+				break;
+				
+		case 2: 
+				System.out.println("Enter index to remove the employee : ");
+				int index = sc.nextInt();
+				list.remove(index);
+				System.out.println("Employee removed succesfully");
+				System.out.println("Size of list "+list.size());
+			break;
+			
+		case 3: 
+				System.out.println("Enter empid to search a employee");
+				int empid = sc.nextInt();
+				Employee e2 = new Employee();
+				e2.setEmpid(empid);
+				int index1 = list.indexOf(e2);
+				if(index1 == -1)
+					System.out.println("Employee not found");
+				else
+				{
+						System.out.println("Employee found at index : "+index1);
+						e2 = list.get(index1);
+						System.out.println(e2);
+				}
+				break;
+				
+		case 4: System.out.println("Employees list after sorting ");
+				class EmployeeComparator implements Comparator<Employee>
+				{
+
+					@Override
+					public int compare(Employee e1, Employee e2) 
+					{
+						int diff = Integer.compare(e1.getEmpid(), e2.getEmpid());
+						return diff;
+					}
+								
+				}
+				EmployeeComparator comparator = new EmployeeComparator();
+				Collections.sort(list,comparator);
+				System.out.println(list);
+				
+				break;
+				
+		case 5: 
+			System.out.println("Enter emp id to be modified: ");
+		    int id = sc.nextInt();
+		Employee key = new Employee();
+		
+		key.setEmpid(id);
+		int index2 = list.indexOf(key);
+		if(index2 == -1)
+		System.out.println("Employee not found.");
+		else {
+		Employee oldEmp = list.get(index2);
+		System.out.println("Employee Found: " + oldEmp);
+		System.out.println("Enter new information for the Employee");
+		Employee newEmp = new Employee();
+		newEmp.acceptData();
+		list.set(index2, newEmp);
+		}
+		break;
+		}
+
+	}while(choice!=0);
+	
+	
+	
+	
+	}
+	}
