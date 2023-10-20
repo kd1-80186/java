@@ -1,0 +1,42 @@
+package com.sunbeam;
+
+public class Manager 
+{
+	
+	private double basicSalary;
+	private double dearanceAllowance;
+	
+	Manager()
+	{
+		
+	}
+
+	public Manager(double basicSalary, double dearanceAllowance) {
+		super();
+		this.basicSalary = basicSalary;
+		this.dearanceAllowance = dearanceAllowance;
+	}
+
+	public double getBasicSalary() {
+		return basicSalary;
+	}
+
+	public void setBasicSalary(double basicSalary) {
+		this.basicSalary = basicSalary;
+	}
+
+	public double getDearanceAllowance() {
+		return dearanceAllowance;
+	}
+
+	public void setDearanceAllowance(double dearanceAllowance) {
+		this.dearanceAllowance = dearanceAllowance;
+	}
+	
+	double getSal()
+	{
+		return basicSalary + dearanceAllowance;
+	}
+	
+
+}

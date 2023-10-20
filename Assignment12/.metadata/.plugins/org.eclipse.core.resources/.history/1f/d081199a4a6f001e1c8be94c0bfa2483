@@ -1,0 +1,12 @@
+package com.sunbeam;
+
+public class Clerk implements Emp
+	private double salary;
+	
+@override
+	public double getSalary() 
+	{
+		return salary;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.sunbeam;
+
+public class TotalSalary {
+
+	public static void main(String[] args) 
+	{
+		Manager m = new Manager(1000,200);
+		Labor l = new Labor(400,100);
+		Clerk c = new Clerk(4000);
+
+	}
+
+}

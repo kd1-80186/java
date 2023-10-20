@@ -1,0 +1,23 @@
+package com.sunbeam;
+
+public class DoubleCheck {
+
+	static <T> int countIf (T[] arr, T key, Check<T> c)
+	{
+		int count = 0;
+		for(T ele: arr) {
+		if(c.compare(ele, key))
+		count++;
+		}
+		return count;
+	}
+
+	public static void main(String[] args) {
+		
+		Double [] arr = {44.44, 77.75, 50.50, 22.58, 50.50, 66.45, 50.50, 45.67};
+		Double key = 50.50;
+		int cnt = countIf(arr, key, (x,y)-> x == y);
+		System.out.println("Count = " + cnt); // 4 (because 4 elements in array are greater than given key i.e. 50)
+	}
+
+}

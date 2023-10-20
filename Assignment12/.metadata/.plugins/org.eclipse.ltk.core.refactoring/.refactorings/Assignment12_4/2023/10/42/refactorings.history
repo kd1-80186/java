@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Check.java&apos; to &apos;Assignment12_5/src&apos;&#x0A;- Original project: &apos;Assignment12_4&apos;&#x0A;- Destination element: &apos;Assignment12_5/src&apos;&#x0A;- Original element: &apos;com.sunbeam.Check.java&apos;" description="Copy compilation unit" destination="=Assignment12_5/src" element1="/src&lt;com.sunbeam{Check.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1697797675697" units="1" version="1.0"/>
+</session>

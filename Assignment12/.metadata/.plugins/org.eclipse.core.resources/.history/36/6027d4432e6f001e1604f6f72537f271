@@ -1,0 +1,61 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+public class ArthmaticTest implements Arithmatic
+{
+	static void calculate(double num1, double num2, Arithmatic op) {
+		double result = op.calc(num1, num2);
+		System.out.println("Result: "+result);
+		}
+	
+	@Override
+	public double calc(double a, double b) 
+	{
+		return 0;
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		
+		
+		
+		int choice;
+		Scanner sc = new Scanner(System.in);
+//		System.out.print("Enter two numbers  : ");
+//		double d1 = sc.nextDouble();
+//		double d2 = sc.nextDouble();
+		
+		
+		do
+		{
+			System.out.println("Which opeartion you want to perform?");
+			System.out.println("0. EXIT");
+			System.out.println("1. Addition ");
+			System.out.println("2. Subtraction");
+			System.out.println("3. Multiplication");
+			System.out.println("4. Division");
+			choice = sc.nextInt();
+			
+			switch(choice)
+			{
+			case 0: System.out.println("Thank you!!");
+			
+			case 1:System.out.print("Enter two numbers  : ");
+					double d1 = sc.nextDouble();
+					double d2 = sc.nextDouble();
+					calculate(d1,d2,(d1,d2)->d1+d2);
+			}
+			
+			
+			
+		}while(choice!=0);
+		
+
+	}
+
+
+	
+
+}

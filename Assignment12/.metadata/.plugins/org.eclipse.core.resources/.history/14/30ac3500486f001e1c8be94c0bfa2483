@@ -1,0 +1,7 @@
+package com.sunbeam;
+
+public class Labor 
+{
+	private int hours;
+	private double rate
+}

@@ -1,0 +1,18 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+public class Factorial {
+
+	public static void main(String[] args)
+	{
+//		Scanner sc = new Scanner(System.in);
+//		System.out.print("Enter number to find factorial : ");
+//		int num = sc.nextInt();
+		Stream<Integer> strm = 
+		
+
+	}
+
+}
