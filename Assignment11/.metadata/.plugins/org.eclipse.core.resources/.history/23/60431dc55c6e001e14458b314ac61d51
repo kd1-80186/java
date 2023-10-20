@@ -1,0 +1,12 @@
+package com.sunbeam;
+
+import java.util.*;
+
+public class BookTest {
+
+	public static void main(String[] args) 
+	{
+		Set<Book> set = new Hashset<>();
+	}
+
+}

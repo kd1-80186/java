@@ -1,0 +1,58 @@
+
+package com.sunbeam;
+
+import java.util.*;
+
+public class BookTest {
+
+	public static void main(String[] args) 
+	{
+		 
+		//TreeSet uses comparator or comparable interfaces to 
+		// check for duplicates.(In case of natural ordering use comparable)
+		 
+		//TreeSet does not use hashCode() and equals() methods 
+		//to check for duplicates
+		
+		//If we do not write code for comparable then it will throw 
+		//java.lang.ClassCastException error.
+		
+		//Output is in alphabetical sorted order
+		
+		Map<String,Book> map = new HashMap<>();
+		
+		Book b1 = new Book();
+		b1.accept();
+		map.put(b1.getIsbn(), b1);
+		
+		Book b2 = new Book();
+		b2.accept();
+		map.put(b2.getIsbn(), b2);
+		
+		Book b3 = new Book();
+		b3.accept();
+		map.put(b3.getIsbn(), b3);
+		
+
+		Iterator<Book> itr = set.iterator();
+		while(itr.hasNext())
+		{
+			Book ele = itr.next();
+			System.out.println(ele);
+		}			
+		
+		System.out.println();
+		
+		System.out.println("After using decending iterator");
+		Iterator<Book> itr1 = set.descendingIterator();
+		while(itr1.hasNext())
+		{
+			Book ele = itr1.next();
+			System.out.println(ele);
+		}	
+	}	
+}
+
+
+
+

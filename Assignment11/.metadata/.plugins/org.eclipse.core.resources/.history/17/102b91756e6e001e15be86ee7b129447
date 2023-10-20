@@ -1,0 +1,59 @@
+
+package com.sunbeam;
+
+import java.util.*;
+
+public class BookTest {
+
+	public static void main(String[] args) 
+	{
+		 int choice;
+		 Scanner sc = new Scanner(System.in);
+		do 
+		{
+			System.out.println("1. Insert book into map");
+			System.out.println("2. Retrive book using isbn code");
+			System.out.print("Enter your choice : ");
+			
+			
+			
+		System.out.println("1. ");
+		
+		Map<String,Book> map = new HashMap<>();
+		
+		Book b1 = new Book();
+		b1.accept();
+		map.put(b1.getIsbn(), b1);
+		
+		Book b2 = new Book();
+		b2.accept();
+		map.put(b2.getIsbn(), b2);
+		
+		Book b3 = new Book();
+		b3.accept();
+		map.put(b3.getIsbn(), b3);
+		
+		}while(choice!=0);
+
+//		Iterator<Book> itr = set.iterator();
+//		while(itr.hasNext())
+//		{
+//			Book ele = itr.next();
+//			System.out.println(ele);
+//		}			
+//		
+//		System.out.println();
+//		
+//		System.out.println("After using decending iterator");
+//		Iterator<Book> itr1 = set.descendingIterator();
+//		while(itr1.hasNext())
+//		{
+//			Book ele = itr1.next();
+//			System.out.println(ele);
+//		}	
+	}	
+}
+
+
+
+

@@ -1,0 +1,49 @@
+package com.sunbeam;
+
+import java.util.*;
+
+public class BookTest {
+
+	public static void main(String[] args) 
+	{
+		//with HashSet duplicate values are not allowed
+		Set<Book> set = new HashSet<>();
+		
+		
+		set.add(new Book("1a",100.12, "Anjali", 1));
+		set.add(new Book("1b",200.13, "Ajay", 2));
+		set.add(new Book("1c",300.14, "Sulochana", 3));
+		set.add(new Book("1d",400.15, "Vishnu", 4));
+		set.add(new Book("1e",500.12, "Shamal", 5));
+		set.add(new Book("1a",100.12, "Anjali", 1));
+		
+		Iterator<Book> itr = set.iterator();
+		while(itr.hasNext())
+		{
+			Book ele = itr.next();
+			System.out.println(ele);
+		}
+	}
+	
+		//to allow duplicate values use collection -> ArrayList
+	
+	List<Book> list = new ArrayList<>();
+	
+	
+	//list.add(new Book("1a",100.12,"Anjali",1));
+	
+	list.add(new Book("1b",200.13, "Ajay", 2));
+	list.add(new Book("1c",300.14, "Sulochana", 3));
+	list.add(new Book("1d",400.15, "Vishnu", 4));
+	list.add(new Book("1e",500.12, "Shamal", 5));
+	list.add(new Book("1a",100.12, "Anjali", 1));
+	
+	Iterator<Book> itr = set.iterator();
+	while(itr.hasNext())
+	{
+		Book ele = itr.next();
+		System.out.println(ele);
+	}
+	
+
+}
