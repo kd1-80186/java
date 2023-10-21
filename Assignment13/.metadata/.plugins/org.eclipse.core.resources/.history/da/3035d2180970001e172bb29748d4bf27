@@ -1,0 +1,33 @@
+package com.sunbeam;
+
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class BufferOutput {
+
+	public static void main(String[] args) 
+	{
+		try(FileReader fr = new FileReader("LineData.bin")){
+			try(BufferedWriter bwr = new BufferedWriter(fw)){
+			Scanner sc = new Scanner(System.in);
+			for(int i=1; i<=4; i++)
+			{
+				System.out.println("Enter line :");
+				String line = sc.nextLine();
+				bwr.write(line);
+				bwr.newLine(); // adds \n
+				}
+			System.out.println("Lines are written into the file");
+			}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+
+}

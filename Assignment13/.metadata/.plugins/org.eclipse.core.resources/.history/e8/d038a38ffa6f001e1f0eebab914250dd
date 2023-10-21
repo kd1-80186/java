@@ -1,0 +1,150 @@
+package com.sunbeam;
+import java.io.*;
+import java.util.*;
+
+
+
+public class BookTest {
+	public static void main(String[] args) {
+
+		List<Book> list = new ArrayList<>();
+		int choice;
+		int bookCount = 0;
+
+		do {
+			
+			System.out.println("0. Exit");
+			System.out.println("1. Add new book in list");
+			System.out.println("2. Display all books in forward order using random access");
+			System.out.println("3. Search a book with given isbn (hint - indexOf())");
+			System.out.println("4. Delete a book at given index.");
+			System.out.println("5. Delete a book with given isbn.");
+			System.out.println("6. Reverse the list (hint - Collections.reverseList())");
+			System.out.println("7. Save books in ﬁle");
+			System.out.println("8. Load books from ﬁle");
+			System.out.print("Enter your choice :");			
+			Scanner sc = new Scanner(System.in);
+			choice = sc.nextInt();
+
+			switch (choice) {
+			case 0:
+				System.out.println("Thank you");
+				break;
+
+			case 1:
+				    Book book = new Book();
+					book.accept();
+					
+				  	if(list.contains(book))
+				  	{
+				  		int index = list.indexOf(book);
+				  		book=list.get(index);
+				  		book.setQuantity(book.getQuantity()+1);
+				  		System.out.println("Book already present and Count is incremented");
+				  	}
+				else
+					{	
+						list.add(book);
+						System.out.println("Book added succesfully");
+					}
+				  	
+				    break;
+
+			case 2:	//forward random access
+					Iterator<Book> itr = list.iterator();
+					while(itr.hasNext())
+					{
+						Book b1= itr.next();
+					System.out.println(b1);
+					}
+				break;
+
+			case 3:
+					System.out.println("Enter isbn to search a book");
+					String isbn = sc.next();
+					Book b2 = new Book();
+					b2.setIsbn(isbn);
+					int index = list.indexOf(b2);
+					if(index == -1)
+					System.out.println("Book not found");
+					else
+					{
+						System.out.println("Book found at index : "+index);
+						book = list.get(index);
+						System.out.println(book);
+					}
+				break;
+
+			case 4:
+				System.out.println("enter the index to delete a book");
+				int index1 = sc.nextInt();
+				Book key = new Book();
+				if(index1>=0 && index1<list.size())
+				{
+					list.remove(index1);
+					System.out.println("Book removed at perticular index");
+				}
+				else
+					System.out.println("Book not found at given index");
+				break;
+
+			case 5:
+				System.out.println("enter the isbn = ");
+				String sbn = sc.next();
+				Book key1 = new Book();
+				key1.setIsbn(sbn);
+				if (list.remove(key1))
+					System.out.println("removed");
+				else
+					System.out.println("Not removed");
+				break;
+
+			case 6:
+					Collections.reverse(list);
+				System.out.println("Reversed list :");
+				break;
+				
+			case 7: try(FileOutputStream fout = new FileOutputStream("movies.bin")) {
+					try(DataOutputStream dout = new DataOutputStream(fout)) {
+					for(Book b : list) {
+						dout.writeUTF(b.getIsbn());
+						dout.writeDouble(b.getPrice());
+						dout.writeUTF(b.getAuthorName());
+						dout.writeInt(b.getQuantity());
+					}
+				} // dout.close();
+			} // fout.close();
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println("Movies saved.");
+					break;
+					
+			case 8:
+				try(FileInputStream fin = new FileInputStream("movies.bin")) {
+					try(DataInputStream din = new DataInputStream(fin)) {
+					while(true) {
+						Book b = new Book();
+						b.setIsbn(din.readUTF());
+						b.setPrice(din.readDouble());
+						b.setAuthorName(din.readUTF());
+						b.setQuantity(din.readInt());
+						System.out.println(b);
+							}
+						} // din.close();
+					} // fin.close();
+					catch (EOFException e) {
+						// do nothing
+					}
+					catch (Exception e) {
+							e.printStackTrace();
+					}
+					break;
+
+			}
+
+		} while (choice != 0);
+
+	}
+}

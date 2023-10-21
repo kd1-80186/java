@@ -1,0 +1,11 @@
+package com.sunbeam.copy;
+
+public class BufferedWriterInput {
+
+	public static void main(String[] args) 
+	{
+		
+
+	}
+
+}

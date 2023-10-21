@@ -1,0 +1,19 @@
+package com.sunbeam;
+
+import java.io.FileWriter;
+
+public class BufferInput {
+
+	public static void main(String[] args) 
+	{	
+		try {
+		FileWriter fw = new FileWriter("LineData.bin");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}
